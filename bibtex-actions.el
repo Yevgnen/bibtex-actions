@@ -67,11 +67,11 @@
   (bibtex-actions-read-backend))
 
 (defun bibtex-actions--completing-read ()
-  "Read bibtex-completion entries for completion using 'completing-read'."
+  "Read bibtex-completion entries for completion using 'completing-read-multiple'."
   (bibtex-completion-init)
   (when-let ((candidates (bibtex-actions--get-candidates))
              (chosen
-              (completing-read
+              (completing-read-multiple
                "BibTeX entries: "
                (lambda (string predicate action)
                  (if (eq action 'metadata)
